@@ -111,10 +111,12 @@ if __name__ == "__main__":
     units = "c"
     thermocouple = MAX6675(cs_pin, clock_pin, data_pin, units)
     running = True
+    print('Ready')
     while(running):
         try:            
             try:
-                tc = thermocouple.get()        
+                tc = thermocouple.get()
+                print(tc)
             except MAX6675Error as e:
                 tc = "Error: "+ e.value
                 running = False
@@ -122,4 +124,5 @@ if __name__ == "__main__":
             time.sleep(1)
         except KeyboardInterrupt:
             running = False
+            print('Stoping')
     thermocouple.cleanup()
