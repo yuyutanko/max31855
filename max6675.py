@@ -9,7 +9,7 @@ class MAX6675(object):
      - A [Raspberry Pi](http://www.raspberrypi.org/)
 
     '''
-    def __init__(self, cs_pin, clock_pin, data_pin, units = "c", board = GPIO.BCM):
+    def __init__(self, cs_pin, clock_pin, data_pin, units = "c", board = GPIO.BOARD):
         '''Initialize Soft (Bitbang) SPI bus
 
         Parameters:
